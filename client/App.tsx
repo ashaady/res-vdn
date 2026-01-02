@@ -15,6 +15,7 @@ import Payment from "./pages/Payment";
 import Orders from "./pages/Orders";
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import ProductsManagement from "./pages/admin/ProductsManagement";
 import ManagerDashboardOverview from "./pages/manager/ManagerDashboardOverview";
 import ManagerDashboardProducts from "./pages/manager/ManagerDashboardProducts";
 import ManagerDashboardAnalytics from "./pages/manager/ManagerDashboardAnalytics";
