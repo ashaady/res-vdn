@@ -278,6 +278,7 @@ export default function Cart() {
 
                 {/* CTA Button */}
                 <Button
+                  onClick={handleProceedToPayment}
                   className={`w-full mt-6 h-14 font-playfair font-bold text-lg uppercase tracking-wide flex items-center justify-center gap-2 ${
                     isFormValid
                       ? "bg-[#F58220] hover:bg-[#E06E10] text-white cursor-pointer"
