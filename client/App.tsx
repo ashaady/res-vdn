@@ -13,6 +13,7 @@ import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
 import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
+import { CartProvider } from "@/context/CartContext";
 
 const queryClient = new QueryClient();
 
