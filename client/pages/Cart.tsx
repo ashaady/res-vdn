@@ -9,18 +9,7 @@ import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 
 export default function Cart() {
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      id: "1",
-      name: "Paella",
-      description: "Riz, fruits de mer, safran",
-      price: 2500,
-      quantity: 2,
-      image:
-        "https://images.unsplash.com/photo-1534080564897-61794cd28547?w=100&h=100&fit=crop",
-    },
-  ]);
-
+  const { cartItems, updateQuantity, removeFromCart } = useCart();
   const [deliveryType, setDeliveryType] = useState("delivery");
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
@@ -35,17 +24,14 @@ export default function Cart() {
   const total = subtotal + deliveryFee;
 
   const handleQuantityChange = (id: string, delta: number) => {
-    setCartItems((items) =>
-      items.map((item) =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + delta) }
-          : item,
-      ),
-    );
+    const item = cartItems.find((i) => i.id === id);
+    if (item) {
+      updateQuantity(id, Math.max(1, item.quantity + delta));
+    }
   };
 
   const handleRemoveItem = (id: string) => {
-    setCartItems((items) => items.filter((item) => item.id !== id));
+    removeFromCart(id);
   };
 
   const isFormValid =
