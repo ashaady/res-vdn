@@ -9,12 +9,27 @@ import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 
 export default function Cart() {
+  const navigate = useNavigate();
   const { cartItems, updateQuantity, removeFromCart } = useCart();
   const [deliveryType, setDeliveryType] = useState("delivery");
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [notes, setNotes] = useState("");
+
+  const handleProceedToPayment = () => {
+    navigate("/payment", {
+      state: {
+        subtotal,
+        deliveryFee,
+        deliveryType,
+        fullName,
+        phone,
+        address,
+        notes,
+      },
+    });
+  };
 
   const deliveryFee = deliveryType === "delivery" ? 1000 : 0;
   const subtotal = cartItems.reduce(
