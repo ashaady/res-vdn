@@ -93,6 +93,75 @@ const App = () => (
               </Layout>
             }
           />
+
+          {/* ADMIN & MANAGER ROUTES */}
+          <Route path="/login" element={<Login />} />
+
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute requiredRoles={["admin", "manager"]}>
+                <Placeholder
+                  title="Dashboard Admin"
+                  description="Tableau de bord pour la gestion des commandes"
+                  icon="📊"
+                />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/manager/dashboard-overview"
+            element={
+              <ProtectedRoute requiredRoles="manager">
+                <Placeholder
+                  title="Dashboard Manager - Vue d'ensemble"
+                  description="Vue globale et statistiques"
+                  icon="📈"
+                />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/manager/dashboard-products"
+            element={
+              <ProtectedRoute requiredRoles="manager">
+                <Placeholder
+                  title="Dashboard Manager - Produits"
+                  description="Analyse des produits et ventes"
+                  icon="🛍️"
+                />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/manager/dashboard-analytics"
+            element={
+              <ProtectedRoute requiredRoles="manager">
+                <Placeholder
+                  title="Dashboard Manager - Analytics"
+                  description="Analyses détaillées et rapports"
+                  icon="📉"
+                />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/admin/products"
+            element={
+              <ProtectedRoute requiredRoles={["admin", "manager"]}>
+                <Placeholder
+                  title="Gestion des Produits"
+                  description="Créer, modifier et gérer les produits"
+                  icon="🍽️"
+                />
+              </ProtectedRoute>
+            }
+          />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route
             path="*"
