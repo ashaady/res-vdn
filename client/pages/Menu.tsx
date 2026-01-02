@@ -9,6 +9,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useCart } from "@/context/CartContext";
+import { toast } from "sonner";
 
 export default function Menu() {
   const [searchParams, setSearchParams] = useSearchParams();
