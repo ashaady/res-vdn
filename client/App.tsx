@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
 import Payment from "./pages/Payment";
+import Orders from "./pages/Orders";
 import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
 import { CartProvider } from "@/context/CartContext";
