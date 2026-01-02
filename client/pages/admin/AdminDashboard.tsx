@@ -13,13 +13,14 @@ export default function AdminDashboard() {
   // Calculate stats
   const totalOrdersToday = orders.length;
   const pendingOrders = orders.filter((o) => o.status === "pending").length;
-  const preparingOrders = orders.filter((o) => o.status === "in_preparation").length;
+  const preparingOrders = orders.filter(
+    (o) => o.status === "in_preparation",
+  ).length;
 
-  const avgPreparationTime = orders.length > 0
-    ? Math.round(
-        orders.reduce((sum) => sum + 15, 0) / orders.length
-      )
-    : 0;
+  const avgPreparationTime =
+    orders.length > 0
+      ? Math.round(orders.reduce((sum) => sum + 15, 0) / orders.length)
+      : 0;
 
   // Filter orders based on search
   useEffect(() => {

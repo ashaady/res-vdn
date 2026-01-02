@@ -57,7 +57,7 @@ export default function Payment() {
       });
 
       toast.success(`Paiement confirmé! Commande en préparation.`);
-      
+
       // Clear cart after successful payment
       clearCart();
 
@@ -99,14 +99,19 @@ export default function Payment() {
                 Choisissez votre méthode de paiement
               </h2>
 
-              <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as "wave" | "maxit")}>
+              <RadioGroup
+                value={paymentMethod}
+                onValueChange={(value) =>
+                  setPaymentMethod(value as "wave" | "maxit")
+                }
+              >
                 {/* Wave Payment Option */}
                 <div className="mb-6 p-6 border-2 border-gray-300 rounded-lg hover:border-[#F58220] transition-colors cursor-pointer">
                   <div className="flex items-start space-x-3">
                     <RadioGroupItem value="wave" id="wave" className="mt-1" />
                     <Label htmlFor="wave" className="flex-1 cursor-pointer">
                       <div className="flex items-center gap-4">
-                        <img 
+                        <img
                           src="https://cdn.builder.io/api/v1/image/assets%2F562ab4a0fd0a4cbdb2356bc1d15ae09f%2F02703e0701a7407caab94ade4aaf70cd?format=webp&width=800"
                           alt="Wave Logo"
                           className="h-16 w-auto"
@@ -130,7 +135,7 @@ export default function Payment() {
                     <RadioGroupItem value="maxit" id="maxit" className="mt-1" />
                     <Label htmlFor="maxit" className="flex-1 cursor-pointer">
                       <div className="flex items-center gap-4">
-                        <img 
+                        <img
                           src="https://cdn.builder.io/api/v1/image/assets%2F562ab4a0fd0a4cbdb2356bc1d15ae09f%2F2a6c2cb943bb4dd192993d467dec8c78?format=webp&width=800"
                           alt="Max it Logo"
                           className="h-16 w-auto"
@@ -156,9 +161,16 @@ export default function Payment() {
                 </h3>
                 <div className="space-y-2 text-sm">
                   {cartItems.map((item) => (
-                    <div key={item.id} className="flex justify-between font-lato">
-                      <span>{item.quantity}x {item.name}</span>
-                      <span>{(item.price * item.quantity).toLocaleString()} F</span>
+                    <div
+                      key={item.id}
+                      className="flex justify-between font-lato"
+                    >
+                      <span>
+                        {item.quantity}x {item.name}
+                      </span>
+                      <span>
+                        {(item.price * item.quantity).toLocaleString()} F
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -196,7 +208,9 @@ export default function Payment() {
                   <div>
                     <p className="text-[#999999]">Type de livraison</p>
                     <p className="font-semibold text-[#6B3E26]">
-                      {deliveryType === "delivery" ? "Livraison à domicile" : "À emporter"}
+                      {deliveryType === "delivery"
+                        ? "Livraison à domicile"
+                        : "À emporter"}
                     </p>
                   </div>
                 </div>

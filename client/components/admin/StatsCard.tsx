@@ -33,7 +33,9 @@ export default function StatsCard({
     >
       {/* Header with Icon and Title */}
       <div className="flex items-start justify-between mb-4">
-        <h3 className="text-sm font-lato text-[#999999] font-semibold">{title}</h3>
+        <h3 className="text-sm font-lato text-[#999999] font-semibold">
+          {title}
+        </h3>
         <div className="text-3xl">{icon}</div>
       </div>
 

@@ -20,7 +20,10 @@ export default function AdminLayout({
   return (
     <div className="flex min-h-screen bg-[#F5F5F5]">
       {/* Sidebar */}
-      <AdminSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <AdminSidebar
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+      />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col ml-0 md:ml-80">
@@ -32,9 +35,7 @@ export default function AdminLayout({
         />
 
         {/* Content */}
-        <main className="flex-1 p-6 md:p-8 overflow-y-auto">
-          {children}
-        </main>
+        <main className="flex-1 p-6 md:p-8 overflow-y-auto">{children}</main>
       </div>
     </div>
   );

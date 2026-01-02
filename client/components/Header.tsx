@@ -25,9 +25,7 @@ export default function Header() {
             className="h-12 w-auto"
           />
           <div className="flex flex-col">
-            <h1 className="text-2xl font-playfair font-bold text-white">
-              VDN
-            </h1>
+            <h1 className="text-2xl font-playfair font-bold text-white">VDN</h1>
             <p className="text-xs text-[#D4AF37] -mt-1 font-lato">
               Cuisine Raffinée
             </p>

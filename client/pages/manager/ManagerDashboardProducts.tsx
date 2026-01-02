@@ -162,7 +162,10 @@ export default function ManagerDashboardProducts() {
               },
               { name: "Autres", sales: 150000, percentage: 18, growth: -5 },
             ].map((category) => (
-              <div key={category.name} className="border border-[#D4AF37] rounded-lg p-4">
+              <div
+                key={category.name}
+                className="border border-[#D4AF37] rounded-lg p-4"
+              >
                 <div className="flex justify-between items-start mb-3">
                   <h4 className="font-playfair font-bold text-[#6B3E26]">
                     {category.name}
@@ -174,7 +177,8 @@ export default function ManagerDashboardProducts() {
                         : "bg-red-100 text-red-700"
                     }`}
                   >
-                    {category.growth > 0 ? "↑" : "↓"} {Math.abs(category.growth)}%
+                    {category.growth > 0 ? "↑" : "↓"}{" "}
+                    {Math.abs(category.growth)}%
                   </span>
                 </div>
                 <p className="font-playfair font-bold text-[#F58220] mb-3">

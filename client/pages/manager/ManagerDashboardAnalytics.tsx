@@ -12,7 +12,8 @@ export default function ManagerDashboardAnalytics() {
   // Calculate performance metrics
   const completedOrders = orders.filter((o) => o.status === "completed").length;
   const totalOrders = orders.length;
-  const completionRate = totalOrders > 0 ? Math.round((completedOrders / totalOrders) * 100) : 0;
+  const completionRate =
+    totalOrders > 0 ? Math.round((completedOrders / totalOrders) * 100) : 0;
   const cancelledOrders = orders.filter((o) => o.status === "pending").length;
   const cancellationRate =
     totalOrders > 0 ? Math.round((cancelledOrders / totalOrders) * 100) : 0;
@@ -355,7 +356,9 @@ export default function ManagerDashboardAnalytics() {
                         <div className="w-full bg-[#F5F5F5] rounded-full h-3">
                           <div
                             className="bg-[#F58220] h-3 rounded-full"
-                            style={{ width: `${(data.revenue / 720000) * 100}%` }}
+                            style={{
+                              width: `${(data.revenue / 720000) * 100}%`,
+                            }}
                           ></div>
                         </div>
                         <p className="text-xs text-[#999999] font-lato mt-1">
@@ -414,14 +417,17 @@ export default function ManagerDashboardAnalytics() {
                       good: true,
                     },
                   ].map((kpi, idx) => (
-                    <div key={idx} className="border border-[#D4AF37] rounded-lg p-4">
+                    <div
+                      key={idx}
+                      className="border border-[#D4AF37] rounded-lg p-4"
+                    >
                       <p className="text-sm text-[#999999] font-lato mb-3">
                         {kpi.label}
                       </p>
                       <div className="flex items-end justify-between mb-3">
                         <p className="text-3xl font-playfair font-bold text-[#6B3E26]">
                           {kpi.value}
-                          {(kpi.unit || "")}
+                          {kpi.unit || ""}
                         </p>
                         <span
                           className={`text-xs font-lato font-semibold px-2 py-1 rounded ${
@@ -445,7 +451,7 @@ export default function ManagerDashboardAnalytics() {
                       </div>
                       <p className="text-xs text-[#999999] font-lato mt-2">
                         Objectif: {kpi.target}
-                        {(kpi.unit || "")}
+                        {kpi.unit || ""}
                       </p>
                     </div>
                   ))}

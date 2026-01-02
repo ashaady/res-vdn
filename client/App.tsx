@@ -45,118 +45,118 @@ const App = () => (
             <Toaster />
             <Sonner />
             <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Layout>
-                <Home />
-              </Layout>
-            }
-          />
-          <Route
-            path="/menu"
-            element={
-              <Layout>
-                <Menu />
-              </Layout>
-            }
-          />
-          <Route
-            path="/cart"
-            element={
-              <Layout>
-                <Cart />
-              </Layout>
-            }
-          />
-          <Route
-            path="/orders"
-            element={
-              <Layout>
-                <Orders />
-              </Layout>
-            }
-          />
-          <Route
-            path="/account"
-            element={
-              <Layout>
-                <Placeholder
-                  title="Espace Client"
-                  description="Gérez votre profil et vos préférences."
-                  icon="👤"
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <Layout>
+                      <Home />
+                    </Layout>
+                  }
                 />
-              </Layout>
-            }
-          />
-          <Route
-            path="/payment"
-            element={
-              <Layout>
-                <Payment />
-              </Layout>
-            }
-          />
+                <Route
+                  path="/menu"
+                  element={
+                    <Layout>
+                      <Menu />
+                    </Layout>
+                  }
+                />
+                <Route
+                  path="/cart"
+                  element={
+                    <Layout>
+                      <Cart />
+                    </Layout>
+                  }
+                />
+                <Route
+                  path="/orders"
+                  element={
+                    <Layout>
+                      <Orders />
+                    </Layout>
+                  }
+                />
+                <Route
+                  path="/account"
+                  element={
+                    <Layout>
+                      <Placeholder
+                        title="Espace Client"
+                        description="Gérez votre profil et vos préférences."
+                        icon="👤"
+                      />
+                    </Layout>
+                  }
+                />
+                <Route
+                  path="/payment"
+                  element={
+                    <Layout>
+                      <Payment />
+                    </Layout>
+                  }
+                />
 
-          {/* ADMIN & MANAGER ROUTES */}
-          <Route path="/login" element={<Login />} />
+                {/* ADMIN & MANAGER ROUTES */}
+                <Route path="/login" element={<Login />} />
 
-          <Route
-            path="/admin/dashboard"
-            element={
-              <ProtectedRoute requiredRoles={["admin", "manager"]}>
-                <AdminDashboard />
-              </ProtectedRoute>
-            }
-          />
+                <Route
+                  path="/admin/dashboard"
+                  element={
+                    <ProtectedRoute requiredRoles={["admin", "manager"]}>
+                      <AdminDashboard />
+                    </ProtectedRoute>
+                  }
+                />
 
-          <Route
-            path="/manager/dashboard-overview"
-            element={
-              <ProtectedRoute requiredRoles="manager">
-                <ManagerDashboardOverview />
-              </ProtectedRoute>
-            }
-          />
+                <Route
+                  path="/manager/dashboard-overview"
+                  element={
+                    <ProtectedRoute requiredRoles="manager">
+                      <ManagerDashboardOverview />
+                    </ProtectedRoute>
+                  }
+                />
 
-          <Route
-            path="/manager/dashboard-products"
-            element={
-              <ProtectedRoute requiredRoles="manager">
-                <ManagerDashboardProducts />
-              </ProtectedRoute>
-            }
-          />
+                <Route
+                  path="/manager/dashboard-products"
+                  element={
+                    <ProtectedRoute requiredRoles="manager">
+                      <ManagerDashboardProducts />
+                    </ProtectedRoute>
+                  }
+                />
 
-          <Route
-            path="/manager/dashboard-analytics"
-            element={
-              <ProtectedRoute requiredRoles="manager">
-                <ManagerDashboardAnalytics />
-              </ProtectedRoute>
-            }
-          />
+                <Route
+                  path="/manager/dashboard-analytics"
+                  element={
+                    <ProtectedRoute requiredRoles="manager">
+                      <ManagerDashboardAnalytics />
+                    </ProtectedRoute>
+                  }
+                />
 
-          <Route
-            path="/admin/products"
-            element={
-              <ProtectedRoute requiredRoles={["admin", "manager"]}>
-                <ProductsManagement />
-              </ProtectedRoute>
-            }
-          />
+                <Route
+                  path="/admin/products"
+                  element={
+                    <ProtectedRoute requiredRoles={["admin", "manager"]}>
+                      <ProductsManagement />
+                    </ProtectedRoute>
+                  }
+                />
 
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route
-            path="*"
-            element={
-              <Layout>
-                <NotFound />
-              </Layout>
-            }
-          />
-        </Routes>
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route
+                  path="*"
+                  element={
+                    <Layout>
+                      <NotFound />
+                    </Layout>
+                  }
+                />
+              </Routes>
             </BrowserRouter>
           </TooltipProvider>
         </OrdersProvider>

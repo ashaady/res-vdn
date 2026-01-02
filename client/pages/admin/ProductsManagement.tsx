@@ -14,7 +14,9 @@ export default function ProductsManagement() {
 
   const filteredProducts = products.filter((p) => {
     const matchCategory = p.category === selectedCategory;
-    const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchSearch = p.name
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
     const matchAvailable =
       filterAvailable === "all" ||
       (filterAvailable === "available" && p.price) ||
@@ -172,15 +174,10 @@ export default function ProductsManagement() {
                 {/* Category Badge */}
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-lato bg-[#F5F5F5] text-[#6B3E26] px-2 py-1 rounded">
-                    {
-                      categories.find((c) => c.id === product.category)
-                        ?.label
-                    }
+                    {categories.find((c) => c.id === product.category)?.label}
                   </span>
                   <button className="text-[#999999] hover:text-[#F58220] transition-colors">
-                    <span className="text-lg">
-                      {product.price ? "✓" : "✕"}
-                    </span>
+                    <span className="text-lg">{product.price ? "✓" : "✕"}</span>
                   </button>
                 </div>
 
@@ -196,7 +193,9 @@ export default function ProductsManagement() {
 
                 {/* Price */}
                 <p className="text-lg font-playfair font-bold text-[#F58220] mb-4">
-                  {product.price ? `${product.price.toLocaleString()} F` : "N/A"}
+                  {product.price
+                    ? `${product.price.toLocaleString()} F`
+                    : "N/A"}
                 </p>
 
                 {/* Actions */}

@@ -26,7 +26,10 @@ interface AdminSidebarProps {
   onClose?: () => void;
 }
 
-export default function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
+export default function AdminSidebar({
+  isOpen = true,
+  onClose,
+}: AdminSidebarProps) {
   const location = useLocation();
   const { user, logout } = useAuth();
   const [expandedMenu, setExpandedMenu] = useState<string | null>("orders");
@@ -91,7 +94,10 @@ export default function AdminSidebar({ isOpen = true, onClose }: AdminSidebarPro
   const renderNavItems = () => (
     <nav className="space-y-1 px-3 py-4">
       {navItems.map((item) => {
-        if (item.requiredRole && !item.requiredRole.includes(user?.role || "")) {
+        if (
+          item.requiredRole &&
+          !item.requiredRole.includes(user?.role || "")
+        ) {
           return null;
         }
 
@@ -103,9 +109,7 @@ export default function AdminSidebar({ isOpen = true, onClose }: AdminSidebarPro
           <div key={item.label}>
             {hasSubmenu ? (
               <button
-                onClick={() =>
-                  setExpandedMenu(isExpanded ? null : item.label)
-                }
+                onClick={() => setExpandedMenu(isExpanded ? null : item.label)}
                 className={`w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg font-lato font-semibold transition-colors text-white ${
                   isExpanded
                     ? "bg-[#F58220] text-white"
@@ -184,7 +188,7 @@ export default function AdminSidebar({ isOpen = true, onClose }: AdminSidebarPro
         {/* Header */}
         <div className="border-b border-[#9C6B4A] px-6 py-6">
           <div className="flex items-center justify-center mb-4">
-            <img 
+            <img
               src="https://cdn.builder.io/api/v1/image/assets%2F562ab4a0fd0a4cbdb2356bc1d15ae09f%2Fc57dc195ba544a7f8fb75b5b0c07efa7?format=webp&width=800"
               alt="VDN"
               className="h-10 w-auto"

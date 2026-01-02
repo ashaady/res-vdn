@@ -18,7 +18,9 @@ export default function Login() {
       await login(email, password);
       navigate("/admin/dashboard");
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Erreur de connexion");
+      toast.error(
+        error instanceof Error ? error.message : "Erreur de connexion",
+      );
     }
   };
 
@@ -41,7 +43,7 @@ export default function Login() {
           {/* Logo */}
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <img 
+              <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F562ab4a0fd0a4cbdb2356bc1d15ae09f%2Fc57dc195ba544a7f8fb75b5b0c07efa7?format=webp&width=800"
                 alt="La VDN"
                 className="h-16 w-auto"
@@ -127,7 +129,8 @@ export default function Login() {
           {/* Info */}
           <div className="mt-6 p-4 bg-[#F5F5F5] rounded-lg">
             <p className="text-xs font-lato text-[#666666] text-center">
-              Tous les identifiants utilisent le mot de passe: <strong>password123</strong>
+              Tous les identifiants utilisent le mot de passe:{" "}
+              <strong>password123</strong>
             </p>
           </div>
         </div>

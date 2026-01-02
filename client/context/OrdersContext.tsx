@@ -28,7 +28,9 @@ interface OrdersContextType {
 
 const OrdersContext = createContext<OrdersContextType | undefined>(undefined);
 
-export const OrdersProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const OrdersProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [orders, setOrders] = useState<Order[]>([]);
 
   // Load orders from localStorage on mount
@@ -58,7 +60,9 @@ export const OrdersProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   const updateOrderStatus = (id: string, status: OrderStatus) => {
     setOrders((prevOrders) =>
-      prevOrders.map((order) => (order.id === id ? { ...order, status } : order)),
+      prevOrders.map((order) =>
+        order.id === id ? { ...order, status } : order,
+      ),
     );
   };
 

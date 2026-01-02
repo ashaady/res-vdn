@@ -4,7 +4,14 @@ import StatsCard from "@/components/admin/StatsCard";
 import { useOrders } from "@/context/OrdersContext";
 import { TrendingUp, TrendingDown } from "lucide-react";
 
-type Period = "today" | "yesterday" | "7days" | "30days" | "month" | "lastmonth" | "custom";
+type Period =
+  | "today"
+  | "yesterday"
+  | "7days"
+  | "30days"
+  | "month"
+  | "lastmonth"
+  | "custom";
 
 const periodLabels: Record<Period, string> = {
   today: "Aujourd'hui",
@@ -25,8 +32,11 @@ export default function ManagerDashboardOverview() {
   const totalOrders = orders.length;
   const completedOrders = orders.filter((o) => o.status === "completed").length;
   const cancelledOrders = orders.filter((o) => o.status === "pending").length;
-  const avgOrderValue = totalOrders > 0 ? Math.round(totalRevenue / totalOrders) : 0;
-  const deliveryOrders = orders.filter((o) => o.deliveryType === "delivery").length;
+  const avgOrderValue =
+    totalOrders > 0 ? Math.round(totalRevenue / totalOrders) : 0;
+  const deliveryOrders = orders.filter(
+    (o) => o.deliveryType === "delivery",
+  ).length;
   const pickupOrders = orders.filter((o) => o.deliveryType === "pickup").length;
 
   const revenueTrend = 12.5;
@@ -34,10 +44,7 @@ export default function ManagerDashboardOverview() {
   const customersTrend = -2.1;
 
   return (
-    <AdminLayout
-      title="Dashboard Manager"
-      searchPlaceholder="Rechercher..."
-    >
+    <AdminLayout title="Dashboard Manager" searchPlaceholder="Rechercher...">
       <div className="space-y-8">
         {/* Period Selector */}
         <div className="bg-white rounded-lg shadow p-6">
@@ -192,7 +199,7 @@ export default function ManagerDashboardOverview() {
                   Période précédente
                 </p>
                 <p className="text-lg font-playfair font-bold text-[#9C6B4A]">
-                  {Math.round(totalRevenue * 0.88 / 1000)}K F
+                  {Math.round((totalRevenue * 0.88) / 1000)}K F
                 </p>
               </div>
             </div>
@@ -210,7 +217,8 @@ export default function ManagerDashboardOverview() {
                     🚚 Livraison à domicile
                   </span>
                   <span className="font-playfair font-bold text-[#6B3E26]">
-                    {deliveryOrders} ({Math.round((deliveryOrders / totalOrders) * 100)}%)
+                    {deliveryOrders} (
+                    {Math.round((deliveryOrders / totalOrders) * 100)}%)
                   </span>
                 </div>
                 <div className="w-full bg-[#F5F5F5] rounded-full h-3">
@@ -229,7 +237,8 @@ export default function ManagerDashboardOverview() {
                     🏠 À emporter
                   </span>
                   <span className="font-playfair font-bold text-[#6B3E26]">
-                    {pickupOrders} ({Math.round((pickupOrders / totalOrders) * 100)}%)
+                    {pickupOrders} (
+                    {Math.round((pickupOrders / totalOrders) * 100)}%)
                   </span>
                 </div>
                 <div className="w-full bg-[#F5F5F5] rounded-full h-3">
