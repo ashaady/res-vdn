@@ -14,6 +14,7 @@ import Cart from "./pages/Cart";
 import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
 import { CartProvider } from "@/context/CartContext";
+import { OrdersProvider } from "@/context/OrdersContext";
 
 const queryClient = new QueryClient();
 
