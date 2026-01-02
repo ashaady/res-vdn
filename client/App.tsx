@@ -65,11 +65,7 @@ const App = () => (
             path="/orders"
             element={
               <Layout>
-                <Placeholder
-                  title="Mes Commandes"
-                  description="Consultez l'historique de vos commandes ici."
-                  icon="📦"
-                />
+                <Orders />
               </Layout>
             }
           />
