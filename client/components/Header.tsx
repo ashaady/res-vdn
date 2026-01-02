@@ -70,7 +70,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="text-[#6B3E26] font-playfair text-2xl font-bold hover:text-[#F58220] transition-colors"
               >
-                LE GOURMET
+                VDN
               </Link>
               <div className="border-t border-gray-200 pt-6">
                 {navLinks.map((link) => (
