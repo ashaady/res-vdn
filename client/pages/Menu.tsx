@@ -9,11 +9,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useCart } from "@/context/CartContext";
+import { toast } from "sonner";
 
 export default function Menu() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get("category") || "entrees";
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const { addToCart } = useCart();
 
   const filteredProducts = useMemo(() => {
     return products.filter((p) => p.category === selectedCategory);
@@ -27,7 +30,8 @@ export default function Menu() {
   };
 
   const handleAddToCart = (product: any) => {
-    console.log("Added to cart:", product);
+    addToCart(product, 1);
+    toast.success(`${product.name} ajouté au panier!`);
   };
 
   return (

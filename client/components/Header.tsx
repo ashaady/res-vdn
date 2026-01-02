@@ -19,11 +19,13 @@ export default function Header() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="text-2xl">🍽️</div>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F562ab4a0fd0a4cbdb2356bc1d15ae09f%2Fc57dc195ba544a7f8fb75b5b0c07efa7?format=webp&width=800"
+            alt="La VDN Logo"
+            className="h-12 w-auto"
+          />
           <div className="flex flex-col">
-            <h1 className="text-2xl font-playfair font-bold text-white">
-              LE GOURMET
-            </h1>
+            <h1 className="text-2xl font-playfair font-bold text-white">VDN</h1>
             <p className="text-xs text-[#D4AF37] -mt-1 font-lato">
               Cuisine Raffinée
             </p>
@@ -66,7 +68,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="text-[#6B3E26] font-playfair text-2xl font-bold hover:text-[#F58220] transition-colors"
               >
-                LE GOURMET
+                VDN
               </Link>
               <div className="border-t border-gray-200 pt-6">
                 {navLinks.map((link) => (
