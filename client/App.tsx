@@ -102,11 +102,7 @@ const App = () => (
             path="/admin/dashboard"
             element={
               <ProtectedRoute requiredRoles={["admin", "manager"]}>
-                <Placeholder
-                  title="Dashboard Admin"
-                  description="Tableau de bord pour la gestion des commandes"
-                  icon="📊"
-                />
+                <AdminDashboard />
               </ProtectedRoute>
             }
           />
