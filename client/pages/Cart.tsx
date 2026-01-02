@@ -6,15 +6,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Trash2, Plus, Minus, ArrowLeft, Lock } from "lucide-react";
 import { useState } from "react";
-
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string;
-  description: string;
-}
+import { useCart } from "@/context/CartContext";
 
 export default function Cart() {
   const [cartItems, setCartItems] = useState<CartItem[]>([
