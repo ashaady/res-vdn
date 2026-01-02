@@ -14,6 +14,7 @@ import Cart from "./pages/Cart";
 import Payment from "./pages/Payment";
 import Orders from "./pages/Orders";
 import Login from "./pages/Login";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
 import { CartProvider } from "@/context/CartContext";
