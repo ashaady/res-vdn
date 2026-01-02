@@ -142,11 +142,7 @@ const App = () => (
             path="/admin/products"
             element={
               <ProtectedRoute requiredRoles={["admin", "manager"]}>
-                <Placeholder
-                  title="Gestion des Produits"
-                  description="Créer, modifier et gérer les produits"
-                  icon="🍽️"
-                />
+                <ProductsManagement />
               </ProtectedRoute>
             }
           />
