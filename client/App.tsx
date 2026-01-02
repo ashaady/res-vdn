@@ -88,11 +88,7 @@ const App = () => (
             path="/payment"
             element={
               <Layout>
-                <Placeholder
-                  title="Paiement"
-                  description="Complétez votre commande en toute sécurité."
-                  icon="💳"
-                />
+                <Payment />
               </Layout>
             }
           />
