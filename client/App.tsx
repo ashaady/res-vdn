@@ -114,11 +114,7 @@ const App = () => (
             path="/manager/dashboard-overview"
             element={
               <ProtectedRoute requiredRoles="manager">
-                <Placeholder
-                  title="Dashboard Manager - Vue d'ensemble"
-                  description="Vue globale et statistiques"
-                  icon="📈"
-                />
+                <ManagerDashboardOverview />
               </ProtectedRoute>
             }
           />
@@ -127,11 +123,7 @@ const App = () => (
             path="/manager/dashboard-products"
             element={
               <ProtectedRoute requiredRoles="manager">
-                <Placeholder
-                  title="Dashboard Manager - Produits"
-                  description="Analyse des produits et ventes"
-                  icon="🛍️"
-                />
+                <ManagerDashboardProducts />
               </ProtectedRoute>
             }
           />
@@ -140,11 +132,7 @@ const App = () => (
             path="/manager/dashboard-analytics"
             element={
               <ProtectedRoute requiredRoles="manager">
-                <Placeholder
-                  title="Dashboard Manager - Analytics"
-                  description="Analyses détaillées et rapports"
-                  icon="📉"
-                />
+                <ManagerDashboardAnalytics />
               </ProtectedRoute>
             }
           />
