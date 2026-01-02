@@ -1,0 +1,170 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Lato:wght@300;400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme for Le Gourmet
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Brand Colors */
+    --primary-orange: 20 95% 57%; /* #F58220 */
+    --dark-brown: 20 44% 33%; /* #6B3E26 */
+    --light-brown: 20 40% 55%; /* #9C6B4A */
+    --gold: 45 78% 58%; /* #D4AF37 */
+
+    /* Functional Colors */
+    --success: 145 63% 49%; /* #2ECC71 */
+    --error: 6 78% 57%; /* #E74C3C */
+    --warning: 39 89% 58%; /* #F39C12 */
+    --info: 204 70% 53%; /* #3498DB */
+
+    /* Text Colors */
+    --text-dark: 0 0% 17%; /* #2C2C2C */
+    --text-medium: 0 0% 40%; /* #666666 */
+    --text-light: 0 0% 60%; /* #999999 */
+
+    /* Backgrounds */
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 20 44% 33%; /* #6B3E26 - Dark brown for text */
+    --light-gray-bg: 0 0% 96%; /* #F5F5F5 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 44% 33%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 44% 33%;
+
+    --primary: 20 95% 57%; /* Orange primary */
+    --primary-foreground: 0 0% 100%; /* White foreground */
+
+    --secondary: 20 44% 33%; /* Dark brown secondary */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%; /* Light gray */
+    --muted-foreground: 0 0% 40%; /* Medium gray text */
+
+    --accent: 20 95% 57%; /* Orange accent */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 6 78% 57%; /* Error red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 20 95% 57%; /* Orange ring */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 20 44% 33%; /* Dark brown */
+    --sidebar-foreground: 0 0% 100%; /* White text */
+    --sidebar-primary: 20 95% 57%; /* Orange primary */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 40% 55%; /* Light brown */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 20 44% 33%;
+    --sidebar-ring: 20 95% 57%;
+  }
+
+  .dark {
+    --background: 20 44% 15%; /* Very dark brown */
+    --foreground: 0 0% 95%; /* Almost white */
+
+    --card: 20 44% 20%; /* Dark brown */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 20 44% 20%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 20 95% 57%; /* Orange primary */
+    --primary-foreground: 20 44% 15%; /* Dark brown */
+
+    --secondary: 45 78% 58%; /* Gold */
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 20 44% 30%; /* Medium brown */
+    --muted-foreground: 0 0% 70%; /* Light gray text */
+
+    --accent: 20 95% 57%; /* Orange */
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 6 78% 57%; /* Error red */
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 20 44% 25%; /* Dark brown */
+    --input: 20 44% 25%;
+    --ring: 20 95% 57%; /* Orange ring */
+    --sidebar-background: 20 44% 15%; /* Dark brown */
+    --sidebar-foreground: 0 0% 95%; /* Light text */
+    --sidebar-primary: 20 95% 57%; /* Orange */
+    --sidebar-primary-foreground: 20 44% 15%;
+    --sidebar-accent: 45 78% 58%; /* Gold */
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 20 44% 25%;
+    --sidebar-ring: 20 95% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-lato;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-playfair font-bold;
+    color: hsl(var(--dark-brown));
+  }
+
+  h1 {
+    @apply text-5xl tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl tracking-tight;
+  }
+
+  p,
+  span,
+  li,
+  a,
+  button,
+  label,
+  td,
+  th {
+    @apply font-lato;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  button {
+    @apply font-semibold uppercase tracking-wide;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
