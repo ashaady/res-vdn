@@ -29,10 +29,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <CartProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+      <OrdersProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
         <Routes>
           <Route
             path="/"
@@ -104,8 +105,9 @@ const App = () => (
             }
           />
         </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+          </BrowserRouter>
+        </TooltipProvider>
+      </OrdersProvider>
     </CartProvider>
   </QueryClientProvider>
 );
