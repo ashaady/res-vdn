@@ -13,10 +13,13 @@ import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
 import Payment from "./pages/Payment";
 import Orders from "./pages/Orders";
+import Login from "./pages/Login";
 import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
 import { CartProvider } from "@/context/CartContext";
 import { OrdersProvider } from "@/context/OrdersContext";
+import { AuthProvider } from "@/context/AuthContext";
+import ProtectedRoute from "@/components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
